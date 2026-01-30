@@ -10,6 +10,36 @@
     <title>Klinik Bidanku - Tugas Kelompok</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: #db2777; /* pink */
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-link.active {
+        color: #db2777;
+        font-weight: 600;
+      }
+    </style>
+
     <script>
       tailwind.config = {
         theme: {
@@ -31,11 +61,20 @@
     <nav class="bg-white shadow-md sticky top-0 z-50">
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <!-- LOGO -->
-        <a href="index.html" class="text-2xl font-bold text-gray-700"> Klinik <span class="text-pink-600">Bidanku</span> </a>
-
+         <!-- ini yang diganti -->
+        <a href="index.html" class="text-2xl font-bold text-gray-700 cursor-pointer select-none hover:opacity-90 transition">
+          Klinik <span class="text-pink-600 lin" >Bidanku</span>
+          <!-- tambahannya -->
+          <p class="text-sm text-gray-500 leading-snug">
+            Layanan Kesehatan Ibu & Anak
+          </p>
+        </a>
         <!-- MENU DESKTOP -->
         <div class="hidden md:flex space-x-6 font-medium items-center">
-          <a href="index.html" class="nav-link">Beranda</a>
+          <a href="index.html"
+            class="text-pink-600 font-semibold border-b-2 border-pink-600 pb-1">
+            Beranda
+          </a>
           <a href="tentang.html" class="nav-link">Tentang</a>
           <a href="jadwal.html" class="nav-link">Jadwal</a>
           <a href="edukasi.html" class="nav-link">Edukasi</a>
@@ -70,7 +109,8 @@
       <div class="flex flex-col md:flex-row items-center bg-pink-50 p-8 rounded-3xl shadow-lg mb-16 border border-pink-100">
         <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0">
           <h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 leading-tight mb-4">Layanan Kesehatan Ibu & Anak <span class="text-gray-800">Terpercaya</span></h1>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          <!-- ini yang dirubah -->
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed md:leading-loose">
             Platform informasi dan pendaftaran digital untuk klinik bidan mandiri, memudahkan akses Anda ke layanan kesehatan terbaik dari rumah.
           </p>
           <a
